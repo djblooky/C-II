@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Card.h"
 
-Card::Card(std::string name, int value)
+Card::Card(std::string name, const int value)
 {
 	m_name = name;
 	m_value = value;

@@ -7,7 +7,7 @@ class Deck
 {
 private:
 	std::vector<Card> *m_deck;
-	Card *nine, *ten, *jack, *queen, *king, *joker;
+	Card *eight, *nine, *ten, *jack, *queen, *king, *ace;
 public:
 	Deck();
 	~Deck(); //free all cards and deck vector
