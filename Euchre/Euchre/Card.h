@@ -7,9 +7,8 @@ private:
 	int m_value;
 	std::string m_name;
 public:
-	Card();
+	Card(std::string name, int value); //cards must be constructed with a name and value
 	~Card();
-	Card(std::string name, int value);
 
 	int getValue();
 	void setValue(int value);
