@@ -12,6 +12,6 @@ private:
 public:
 	Player();
 	~Player();
-	void addToHand(Card card);
+	void addToHand(Card *card);
 };
 

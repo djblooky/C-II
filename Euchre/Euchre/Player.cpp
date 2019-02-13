@@ -12,7 +12,7 @@ Player::~Player()
 {
 }
 
-void Player::addToHand(Card card)
+void Player::addToHand(Card *card)
 {
-	m_hand.push_back(&card);
+	m_hand.push_back(card);
 }

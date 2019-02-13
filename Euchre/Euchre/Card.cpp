@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "stdafx.h"
 #include "Card.h"
 
 Card::Card(std::string name, const int value, const int s)
