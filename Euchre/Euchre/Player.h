@@ -13,5 +13,6 @@ public:
 	Player();
 	~Player();
 	void addToHand(Card *card);
+	void displayHand();
 };
 

@@ -22,7 +22,7 @@ Deck::~Deck()
 {	
 	//for each card in m_deck delete that card
 
-  delete &m_deck; 
+	free(&m_deck); 
 }
 
 void Deck::createDeck()
@@ -38,11 +38,16 @@ void Deck::createDeck()
   }
 }
 
-void Deck::deal(std::vector<Player>& players) //five cards to each player
+void Deck::deal(std::vector<Player>& players) //deal rotation
 {
 	if (isShuffled) { //if not shuffled, won't deal
-		for (auto &player : players) { //for each player, deal them 5 cards
-			deal(player, 5);
+		
+		int pass = 1, cards = 3;
+		while (pass <= 2) { //2 deal passes
+			for (auto &player : players) { //for each player, deal them in
+				deal(player, cards);
+			}
+			cards = 2; //after 1st pass deals 2 cards
 		}
 	}
 	else {
