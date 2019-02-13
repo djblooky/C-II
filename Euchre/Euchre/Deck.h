@@ -6,8 +6,9 @@
 class Deck
 {
 private:
-	std::vector<Card> *m_deck;
-	Card *eight, *nine, *ten, *jack, *queen, *king, *ace;
+	std::vector<Card*> *m_deck; //deck itself heap allocated
+	Card *eight, *nine, *ten, *jack, *queen, *king, *ace; //cards in the deck are heap allocated
+	bool isShuffled;
 public:
 	Deck();
 	~Deck(); //free all cards and deck vector

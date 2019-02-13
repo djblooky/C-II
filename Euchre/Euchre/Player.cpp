@@ -4,6 +4,7 @@
 
 Player::Player()
 {
+	isDealer = false;
 }
 
 
