@@ -25,3 +25,8 @@ void Player::displayHand() {
 	}
 	std::cout << std::endl;
 }
+
+void Player::setName(std::string name)
+{
+	m_name = name;
+}

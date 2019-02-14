@@ -14,5 +14,6 @@ public:
 	~Player();
 	void addToHand(Card card);
 	void displayHand();
+	void setName(std::string name);
 };
 
