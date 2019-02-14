@@ -19,6 +19,10 @@ void Player::addToHand(Card card)
 }
 
 void Player::displayHand() {
+
+	if (isDealer) {
+		std::cout << "\t(Dealer) ";
+	}
 	std::cout << m_name << "'s hand: ";
 	for (auto &card : m_hand) {
 		std::cout << card.getName() << " ";
@@ -29,4 +33,9 @@ void Player::displayHand() {
 void Player::setName(std::string name)
 {
 	m_name = name;
+}
+
+void Player::setDealer(bool d)
+{
+	isDealer = d;
 }

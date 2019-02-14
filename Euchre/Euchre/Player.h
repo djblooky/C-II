@@ -15,5 +15,6 @@ public:
 	void addToHand(Card card);
 	void displayHand();
 	void setName(std::string name);
+	void setDealer(bool d);
 };
 

@@ -66,8 +66,13 @@ void Deck::deal(Player &player, const int numOfCards) //deal specified number of
 
 void Deck::shuffle() //must be shuffled in order to be dealt
 {
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	std::random_shuffle(m_deck.begin(), m_deck.end());
 	isShuffled = true;
+}
+
+void Deck::getTrump() 
+{
+	trump = m_deck.back();
 }
 

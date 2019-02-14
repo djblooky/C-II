@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Tester.h"
-
+#include <random>
+#include <ctime>
 
 Tester::Tester()
 {
@@ -17,7 +18,6 @@ Tester::Tester()
 	m_deck = new Deck();
 }
 
-
 Tester::~Tester()
 {
 	free(m_deck);
@@ -30,13 +30,26 @@ void Tester::displayHands() //display all players' hands
 	}
 }
 
+void Tester::pickDealer() //randomly assigns a dealer
+{
+	srand((unsigned int)time(NULL));
+	int num = rand() % m_players.size();
+	m_players[num].setDealer(true); 
+}
+
 void Tester::test() 
 {
-	(*m_deck).createDeck();
-	(*m_deck).shuffle();
-	(*m_deck).deal(m_players);
-	displayHands();
+	Deck deck = *m_deck;
+	deck.createDeck();
+	pickDealer();
 
+	deck.deal(m_players); //wont work, deck isn't shuffled
+
+	deck.shuffle();
+	deck.deal(m_players); //will work
+
+	deck.getTrump(); 
+	displayHands();
 }
 
 

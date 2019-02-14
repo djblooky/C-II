@@ -12,6 +12,7 @@ private:
 public:
 	Card(std::string name, const int value, const int s); //cards must be constructed with a name and value
 
+	Card();
 	int getValue();
 	void setValue(int value);
 	std::string getName();

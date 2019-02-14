@@ -7,6 +7,10 @@ Card::Card(std::string name, const int value, const int s)
 	m_value = value;
 	m_suit = static_cast<suit>(s); //sets card suit from number values
 }
+Card::Card() 
+{
+	
+}
 
 int Card::getValue()
 {

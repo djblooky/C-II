@@ -8,6 +8,7 @@ class Deck
 private:
 	std::vector<Card> m_deck; 
 	bool isShuffled;
+	Card trump;
 public:
 	Deck();
 	~Deck(); 
@@ -15,6 +16,7 @@ public:
 	void deal(std::vector<Player> &players); //deals to each player
 	void deal(Player &player, const int numOfCards);
 	void shuffle();
+	void getTrump();
 
 	
 };
