@@ -5,30 +5,25 @@
 
 Deck::Deck()
 {
-   //m_deck = new std::vector<Card*>(); //heap allocated deck vector with cards allocated on the heap
-   eight = new Card("Eight", 1, 0);
-   nine = new Card("Nine", 1, 0);
-   ten = new Card("Ten", 1, 0); //values dont matter yet
-   jack = new Card("Jack", 1, 0);
-   queen = new Card("Queen", 1, 0);
-   king = new Card("King", 1, 0);
-   ace = new Card("Ace", 1, 0);
-
    isShuffled = false;
 }
 
 
 Deck::~Deck()
 {	
-	for (auto &card : m_deck) { //free each card in the deck
-		free(card);
-	}
-
 	
 }
 
 void Deck::createDeck()
 {
+	Card eight("Eight", 1, 0);
+	Card nine("Nine", 1, 0);
+	Card ten("Ten", 1, 0); //values dont matter yet
+	Card jack("Jack", 1, 0);
+	Card queen("Queen", 1, 0);
+	Card king("King", 1, 0);
+	Card ace("Ace", 1, 0);
+
   for(int i = 0; i < 4; i++) { //add four of each card to the deck vector
 	m_deck.push_back(eight);
 	m_deck.push_back(nine);
@@ -60,7 +55,7 @@ void Deck::deal(std::vector<Player>& players) //deal rotation
 void Deck::deal(Player player, const int numOfCards) //deal specified number of cards to one player
 {
 	for (int i = 0; i < numOfCards; i++) {
-		Card *card = m_deck.back(); //grabs card on top of deck
+		Card card = m_deck.back(); //grabs card on top of deck
 		player.addToHand(card); //add last card to player.m_hand
 		m_deck.pop_back(); //remove last card from m_deck
 	}

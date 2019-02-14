@@ -6,12 +6,11 @@
 class Deck
 {
 private:
-	std::vector<Card*> m_deck; 
-	Card *eight, *nine, *ten, *jack, *queen, *king, *ace; //cards in the deck are heap allocated
+	std::vector<Card> m_deck; 
 	bool isShuffled;
 public:
 	Deck();
-	~Deck(); //free all cards and deck vector
+	~Deck(); 
 	void createDeck(); //makes four of each card type for 24 card deck and adds each one to m_deck vector
 	void deal(std::vector<Player> &players); //deals to each player
 	void shuffle();
