@@ -22,6 +22,13 @@ void Tester::displayHands() //display all players' hands
 	}
 }
 
+void Tester::test() 
+{
+	m_deck.createDeck();
+	m_deck.deal(m_players);
+	displayHands();
+}
+
 
 
 

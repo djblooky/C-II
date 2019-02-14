@@ -8,8 +8,11 @@ Player::Player()
 }
 
 
-Player::~Player()
+Player::~Player() 
 {
+	for (auto &card : m_hand) { //free every card in player's hand
+		free(card);
+	}
 }
 
 void Player::addToHand(Card *card)
@@ -18,7 +21,9 @@ void Player::addToHand(Card *card)
 }
 
 void Player::displayHand() {
+	std::cout << m_name << "'s hand: ";
 	for (auto &card : m_hand) {
 		std::cout << (*card).getName() << " ";
 	}
+	std::cout << std::endl;
 }

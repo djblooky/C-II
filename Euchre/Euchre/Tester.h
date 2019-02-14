@@ -12,5 +12,7 @@ public:
 	Tester();
 	~Tester();
 	void displayHands();
+	void test();
+	
 };
 

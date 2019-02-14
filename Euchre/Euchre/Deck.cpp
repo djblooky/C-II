@@ -20,9 +20,11 @@ Deck::Deck()
 
 Deck::~Deck()
 {	
-	//for each card in m_deck delete that card
+	for (auto &card : m_deck) { //free each card in the deck
+		free(card);
+	}
 
-	free(&m_deck); 
+	
 }
 
 void Deck::createDeck()
