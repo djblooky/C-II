@@ -45,6 +45,7 @@ void Deck::deal(std::vector<Player>& players) //deal rotation
 				deal(player, cards);
 			}
 			cards = 2; //after 1st pass deals 2 cards
+			pass++;
 		}
 	}
 	else {
