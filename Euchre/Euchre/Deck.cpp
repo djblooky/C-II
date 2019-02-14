@@ -53,7 +53,9 @@ void Deck::deal(std::vector<Player>& players) //deal rotation
 	}
 }
 
-void Deck::deal(Player player, const int numOfCards) //deal specified number of cards to one player
+//using &player instead of just player ensures that it doesn't add the cards to copies of the player, but the actual player
+
+void Deck::deal(Player &player, const int numOfCards) //deal specified number of cards to one player
 {
 	for (int i = 0; i < numOfCards; i++) {
 		Card card = m_deck.back(); //grabs card on top of deck
