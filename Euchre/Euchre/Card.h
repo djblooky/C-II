@@ -12,6 +12,7 @@ private:
 	int m_rank;
 	std::string m_name;
 	card::suit m_suit;
+	bool isRed;
 public:
 	Card(const std::string name, int rank, int s); //cards must be constructed with a name and value
 

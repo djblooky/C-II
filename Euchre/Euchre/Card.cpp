@@ -43,6 +43,10 @@ void Card::setRank(int rank)
 void Card::setSuit(int s)
 {
 	m_suit = static_cast<card::suit>(s);
+
+	if (s < 3) {
+		isRed = true;
+	}
 }
 
 std::string Card::getName()
