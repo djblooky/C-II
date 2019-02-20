@@ -4,6 +4,7 @@
 
 hardCards::hardCards()
 {
+	/*
 	Card jackOfHearts("Jack", 1, 0);
 	Card aceOfHearts("Ace", 2, 0);
 	Card kingOfHearts("King", 3, 0);
@@ -67,6 +68,7 @@ hardCards::hardCards()
 	m_deck.push_back(queenOfClubs);
 	m_deck.push_back(kingOfClubs);
 	m_deck.push_back(aceOfClubs);
+	*/
 }
 
 

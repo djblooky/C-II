@@ -23,9 +23,13 @@ std::string Card::getSuit()
 
 	switch (m_suit) {
 		case hearts: suitString = "Hearts";
+			break;
 		case diamonds: suitString = "Diamonds";
+			break;
 		case clubs: suitString = "Clubs";
+			break;
 		case spades: suitString = "Spades";
+			break;
 	}
 
 	return suitString;
