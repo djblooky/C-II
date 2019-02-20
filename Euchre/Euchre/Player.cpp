@@ -25,7 +25,13 @@ void Player::displayHand() {
 	}
 	std::cout << m_name << "'s hand: ";
 	for (auto &card : m_hand) {
-		std::cout << card.getName() << " of " << card.getSuit() << ", ";
+		std::cout << card.getName() << " of " << card.getSuit();
+
+		Card *a = &card;
+		Card *b = &m_hand.back();
+		if (a != b) { //if not last card in hand
+			std::cout << ", ";
+		}
 	}
 	std::cout << std::endl;
 }
