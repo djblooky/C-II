@@ -14,17 +14,28 @@ Deck::~Deck()
 	
 }
 
-void Deck::createDeck()
+void Deck::createDeck() 
 {
-	Card eight("Eight", 1, 0);
-	Card nine("Nine", 1, 0);
-	Card ten("Ten", 1, 0); //values dont matter yet
+	 //suit values are set later
+	 	 
 	Card jack("Jack", 1, 0);
-	Card queen("Queen", 1, 0);
-	Card king("King", 1, 0);
-	Card ace("Ace", 1, 0);
+	Card ace("Ace", 2, 0);
+	Card king("King", 3, 0);
+	Card queen("Queen", 4, 0);
+	Card ten("Ten", 5, 0);
+	Card nine("Nine", 6, 0);
+	Card eight("Eight", 7, 0);
 
-  for(int i = 0; i < 4; i++) { //add four of each card to the deck vector
+  for(int i = 0; i < 4; i++) { //add four of each cards of each suit to the deck vector
+	
+	eight.setSuit(i);
+	nine.setSuit(i);
+	ten.setSuit(i);
+	jack.setSuit(i);
+	queen.setSuit(i);
+	king.setSuit(i);
+	ace.setSuit(i);
+
 	m_deck.push_back(eight);
 	m_deck.push_back(nine);
     m_deck.push_back(ten);
@@ -71,8 +82,9 @@ void Deck::shuffle() //must be shuffled in order to be dealt
 	isShuffled = true;
 }
 
-void Deck::getTrump() 
+void Deck::getTrumpCard() 
 {
-	trump = m_deck.back();
+	trump = m_deck.back(); //top card in the deck is trump
+	//make this face up?
 }
 

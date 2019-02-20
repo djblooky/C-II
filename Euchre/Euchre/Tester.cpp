@@ -48,7 +48,7 @@ void Tester::test()
 	deck.shuffle();
 	deck.deal(m_players); //will work
 
-	deck.getTrump(); 
+	deck.getTrumpCard(); 
 	displayHands();
 }
 

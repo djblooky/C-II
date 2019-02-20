@@ -5,16 +5,18 @@
 class Card
 {
 private:
-	int m_value;
+	int m_rank;
 	std::string m_name;
-	enum suit{hearts = 0, diamonds, spades, clubs};
+	enum suit { hearts = 0, diamonds, spades, clubs };
 	suit m_suit;
 public:
-	Card(std::string name, const int value, const int s); //cards must be constructed with a name and value
+	Card(const std::string name, int rank, int s); //cards must be constructed with a name and value
 
 	Card();
-	int getValue();
-	void setValue(int value);
+	int getRank();
+	std::string getSuit();
+	void setRank(int rank);
+	void setSuit(int s);
 	std::string getName();
 };
 

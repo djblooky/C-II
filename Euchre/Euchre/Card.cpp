@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Card.h"
 
-Card::Card(std::string name, const int value, const int s)
+Card::Card(const std::string name, int rank, int s)
 {
 	m_name = name;
-	m_value = value;
+	m_rank = rank;
 	m_suit = static_cast<suit>(s); //sets card suit from number values
 }
 Card::Card() 
@@ -12,14 +12,33 @@ Card::Card()
 	
 }
 
-int Card::getValue()
+int Card::getRank()
 {
-	return m_value;
+	return m_rank;
 }
 
-void Card::setValue(int value)
+std::string Card::getSuit()
 {
-	m_value = value;
+	std::string suitString;
+
+	switch (m_suit) {
+		case hearts: suitString = "Hearts";
+		case diamonds: suitString = "Diamonds";
+		case clubs: suitString = "Clubs";
+		case spades: suitString = "Spades";
+	}
+
+	return suitString;
+}
+
+void Card::setRank(int rank)
+{
+	m_rank = rank;
+}
+
+void Card::setSuit(int s)
+{
+	m_suit = static_cast<suit>(s);
 }
 
 std::string Card::getName()
