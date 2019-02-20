@@ -5,7 +5,7 @@ Card::Card(const std::string name, int rank, int s)
 {
 	m_name = name;
 	m_rank = rank;
-	m_suit = static_cast<suit>(s); //sets card suit from number values
+	m_suit = static_cast<card::suit>(s); //sets card suit from number values
 }
 Card::Card() 
 {
@@ -22,13 +22,13 @@ std::string Card::getSuit()
 	std::string suitString;
 
 	switch (m_suit) {
-		case hearts: suitString = "Hearts";
+		case card::hearts: suitString = "Hearts";
 			break;
-		case diamonds: suitString = "Diamonds";
+		case card::diamonds: suitString = "Diamonds";
 			break;
-		case clubs: suitString = "Clubs";
+		case card::clubs: suitString = "Clubs";
 			break;
-		case spades: suitString = "Spades";
+		case card::spades: suitString = "Spades";
 			break;
 	}
 
@@ -42,7 +42,7 @@ void Card::setRank(int rank)
 
 void Card::setSuit(int s)
 {
-	m_suit = static_cast<suit>(s);
+	m_suit = static_cast<card::suit>(s);
 }
 
 std::string Card::getName()

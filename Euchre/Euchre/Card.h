@@ -2,13 +2,16 @@
 #include <iostream>
 #include <string>
 
+namespace card {
+	enum suit { hearts = 0, diamonds, spades, clubs };
+}
+
 class Card
 {
 private:
 	int m_rank;
 	std::string m_name;
-	enum suit { hearts = 0, diamonds, spades, clubs };
-	suit m_suit;
+	card::suit m_suit;
 public:
 	Card(const std::string name, int rank, int s); //cards must be constructed with a name and value
 

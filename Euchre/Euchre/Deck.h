@@ -8,7 +8,8 @@ class Deck
 private:
 	std::vector<Card> m_deck; 
 	bool isShuffled;
-	Card trump;
+	Card trumpCard;
+	std::string trumpSuit;
 public:
 	Deck();
 	~Deck(); 

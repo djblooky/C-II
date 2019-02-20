@@ -28,7 +28,7 @@ void Deck::createDeck()
 
   for(int i = 0; i < 4; i++) { //add four of each cards of each suit to the deck vector
 	
-	eight.setSuit(i);
+	eight.setSuit(i); //setSuit switches through suit enum to set the suit string
 	nine.setSuit(i);
 	ten.setSuit(i);
 	jack.setSuit(i);
@@ -84,7 +84,8 @@ void Deck::shuffle() //must be shuffled in order to be dealt
 
 void Deck::getTrumpCard() 
 {
-	trump = m_deck.back(); //top card in the deck is trump
-	//make this face up?
+	trumpCard = m_deck.back(); //top card in the deck is trump
+	//make this "display" as face up?
+	trumpSuit = trumpCard.getSuit();
 }
 

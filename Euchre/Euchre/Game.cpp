@@ -1,9 +1,9 @@
 #include "stdafx.h"
-#include "Tester.h"
+#include "Game.h"
 #include <random>
 #include <ctime>
 
-Tester::Tester()
+Game::Game()
 {
 	m_p1.setName("Player 1");
 	m_p2.setName("Player 2");
@@ -18,26 +18,38 @@ Tester::Tester()
 	m_deck = new Deck();
 }
 
-Tester::~Tester()
+Game::~Game()
 {
 	free(m_deck);
 }
 
-void Tester::displayHands() //display all players' hands
+void Game::displayHands() //display all players' hands
 {
 	for (auto &player : m_players) {
 		player.displayHand();
 	}
 }
 
-void Tester::pickDealer() //randomly assigns a dealer
+void Game::rankHands()
+{
+	for (auto &player : m_players) {
+		rankHand(player);
+	}
+}
+
+void Game::rankHand(Player & p)
+{
+
+}
+
+void Game::pickDealer() //randomly assigns a dealer
 {
 	srand((unsigned int)time(NULL));
 	int num = rand() % m_players.size();
 	m_players[num].setDealer(true); 
 }
 
-void Tester::test() 
+void Game::test() //temporary testing method
 {
 	Deck deck = *m_deck;
 	deck.createDeck();
@@ -50,6 +62,27 @@ void Tester::test()
 
 	deck.getTrumpCard(); 
 	displayHands();
+}
+
+void Game::game()
+{
+	Deck deck = *m_deck;
+
+	//while no one has won the game
+		deck.createDeck();
+		pickDealer();
+
+	//while no one has won the round
+		round(deck);
+}
+
+void Game::round(Deck deck)
+{
+	deck.shuffle();
+	deck.deal(m_players);
+
+
+
 }
 
 
