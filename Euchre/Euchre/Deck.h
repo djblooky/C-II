@@ -7,7 +7,7 @@ class Deck
 {
 private:
 	std::vector<Card> m_deck; 
-	bool isShuffled;
+	bool isShuffled, trumpPicked;
 	Card trumpCard;
 	std::string trumpSuit;
 public:
@@ -19,6 +19,9 @@ public:
 	void shuffle();
 	void setTrumpCard();
 	void setTrumpSuit(std::string suit);
+	void setTrumpPicked(bool isPicked);
+	bool getTrumpPicked();
 	Card getTrumpCard();
+	std::string getTrumpSuit();
 };
 

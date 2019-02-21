@@ -6,6 +6,7 @@
 Deck::Deck()
 {
    isShuffled = false;
+   trumpPicked = false;
 }
 
 
@@ -93,8 +94,23 @@ void Deck::setTrumpSuit(std::string suit)
 	trumpSuit = suit;
 }
 
+void Deck::setTrumpPicked(bool isPicked)
+{
+	trumpPicked = isPicked;
+}
+
+bool Deck::getTrumpPicked()
+{
+	return trumpPicked;
+}
+
 Card Deck::getTrumpCard()
 {
 	return trumpCard;
+}
+
+std::string Deck::getTrumpSuit()
+{
+	return "The trump suit is: " + trumpSuit;
 }
 

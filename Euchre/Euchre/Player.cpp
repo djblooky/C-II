@@ -37,7 +37,7 @@ void Player::displayHand() {
 	std::cout << std::endl;
 }
 
-void Player::rankHand(Deck d)
+void Player::rankHand(Deck &d)
 {
 
 	int strongCards = 0;
@@ -51,6 +51,7 @@ void Player::rankHand(Deck d)
 		
 		if (strongCards >= 3) { //if hand has at least 3 strong cards
 			d.setTrumpSuit(d.getTrumpCard().getSuit()); //set top card to trump suit
+			d.setTrumpPicked(true);
 			break;
 		}
 
@@ -65,4 +66,9 @@ void Player::setName(std::string name)
 void Player::setDealer(bool d)
 {
 	isDealer = d;
+}
+
+std::string Player::getName()
+{
+	return m_name;
 }

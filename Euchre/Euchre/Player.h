@@ -15,8 +15,9 @@ public:
 	~Player();
 	void addToHand(Card card);
 	void displayHand();
-	void rankHand(Deck d);
+	void rankHand(Deck &d);
 	void setName(std::string name);
 	void setDealer(bool d);
+	std::string getName();
 };
 

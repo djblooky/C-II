@@ -30,10 +30,23 @@ void Game::displayHands() //display all players' hands
 	}
 }
 
-void Game::rankHands(Deck d)
+void Game::rankHands(Deck &d)
 {
 	for (auto &player : m_players) {
 		player.rankHand(d);
+
+		if (d.getTrumpPicked()) { //if trump is picked stop rotaion and the play begins
+			pickedTrump = player; //player that picked the trump
+			break;
+		}
+		else { //no players had a strong hand
+			//randomly set the trump suit from the 3 remaining suits
+			srand((unsigned int)time(NULL));
+			int num = rand() % 3; //random range 0-2
+			std::string suit;
+
+			d.setTrumpSuit("DEALER PASSED");
+		}
 	}
 }
 
@@ -43,7 +56,12 @@ void Game::pickDealer() //randomly assigns a dealer
 {
 	srand((unsigned int)time(NULL));
 	int num = rand() % m_players.size();
-	m_players[num].setDealer(true); 
+	Player dealer = m_players[num];
+	dealer.setDealer(true); 
+
+	//this ensures the dealer will be at the end of the rotation
+	m_players.erase(m_players.begin() + num); //remove dealer from players vector
+	m_players.push_back(dealer); //add dealer back to the end of the vector
 }
 
 void Game::game() 
@@ -63,8 +81,14 @@ void Game::round(Deck deck) //all the stuff that happens each round
 	deck.shuffle();
 	deck.deal(m_players);
 
-	deck.getTrumpCard();
-	displayHands();
+	deck.setTrumpCard();
+	//displayHands();
+
+	rankHands(deck); //determines trump card
+	//deck.getTrumpSuit(); 
+
+	//display the player that chose the trump card and the suit itself
+	std::cout << pickedTrump.getName() << " picked the trump suit. " << deck.getTrumpSuit() << "!" << std::endl;
 
 }
 
