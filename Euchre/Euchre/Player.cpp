@@ -68,6 +68,11 @@ void Player::setDealer(bool d)
 	isDealer = d;
 }
 
+bool Player::getDealer() 
+{
+	return isDealer;
+}
+
 std::string Player::getName()
 {
 	return m_name;

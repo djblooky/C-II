@@ -30,6 +30,17 @@ void Game::displayHands() //display all players' hands
 	}
 }
 
+std::string getRandomSuit() {
+	srand((unsigned int)time(NULL));
+	int num = rand() % 3; //random range 0-2
+	card::suit suit = static_cast<card::suit>(num); //assign suit
+	Card card;
+	card.setSuit(suit);
+	std::string suitString = card.getSuit();
+
+	return suitString;
+}
+
 void Game::rankHands(Deck &d)
 {
 	for (auto &player : m_players) {
@@ -40,17 +51,15 @@ void Game::rankHands(Deck &d)
 			break;
 		}
 		else { //no players had a strong hand
-			//randomly set the trump suit from the 3 remaining suits
-			srand((unsigned int)time(NULL));
-			int num = rand() % 3; //random range 0-2
-			std::string suit;
-
-			d.setTrumpSuit("DEALER PASSED");
+			if (player.getDealer()) {
+				pickedTrump = player;
+				pickedTrump.setName("No players");
+			}
+			   //randomly set the trump suit to fit the dealers hand best
+			d.setTrumpSuit(getRandomSuit());
 		}
 	}
 }
-
-
 
 void Game::pickDealer() //randomly assigns a dealer
 {
@@ -88,6 +97,7 @@ void Game::round(Deck deck) //all the stuff that happens each round
 	//deck.getTrumpSuit(); 
 
 	//display the player that chose the trump card and the suit itself
+
 	std::cout << pickedTrump.getName() << " picked the trump suit. " << deck.getTrumpSuit() << "!" << std::endl;
 
 }
