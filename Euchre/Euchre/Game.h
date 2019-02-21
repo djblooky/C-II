@@ -13,8 +13,7 @@ public:
 	Game();
 	~Game();
 	void displayHands();
-	void rankHands(Deck &d);
-
+	void rankHands(Deck d);
 	void test(); //temporary method to test each homework
 	void game(); 
 	void round(Deck deck);

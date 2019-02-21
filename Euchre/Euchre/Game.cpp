@@ -30,7 +30,7 @@ void Game::displayHands() //display all players' hands
 	}
 }
 
-void Game::rankHands(Deck &d)
+void Game::rankHands(Deck d)
 {
 	for (auto &player : m_players) {
 		player.rankHand(d);
@@ -61,7 +61,7 @@ void Game::test() //temporary testing method
 	displayHands();
 }
 
-void Game::game()
+void Game::game() 
 {
 	Deck deck = *m_deck;
 
@@ -71,7 +71,7 @@ void Game::game()
 
 	//while no one has won the round
 		round(deck);
-}
+} 
 
 void Game::round(Deck deck)
 {
