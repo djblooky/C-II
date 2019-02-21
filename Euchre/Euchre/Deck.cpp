@@ -82,10 +82,19 @@ void Deck::shuffle() //must be shuffled in order to be dealt
 	isShuffled = true;
 }
 
-void Deck::getTrumpCard() 
+void Deck::setTrumpCard() 
 {
 	trumpCard = m_deck.back(); //top card in the deck is trump
 	//make this "display" as face up?
-	trumpSuit = trumpCard.getSuit();
+}
+
+void Deck::setTrumpSuit(std::string suit)
+{
+	trumpSuit = suit;
+}
+
+Card Deck::getTrumpCard()
+{
+	return trumpCard;
 }
 

@@ -17,8 +17,8 @@ public:
 	void deal(std::vector<Player> &players); //deals to each player
 	void deal(Player &player, const int numOfCards);
 	void shuffle();
-	void getTrumpCard();
-
-	
+	void setTrumpCard();
+	void setTrumpSuit(std::string suit);
+	Card getTrumpCard();
 };
 

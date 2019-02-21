@@ -53,3 +53,8 @@ std::string Card::getName()
 {
 	return m_name;
 }
+
+bool Card::getColor()
+{
+	return isRed;
+}

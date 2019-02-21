@@ -30,17 +30,14 @@ void Game::displayHands() //display all players' hands
 	}
 }
 
-void Game::rankHands()
+void Game::rankHands(Deck &d)
 {
 	for (auto &player : m_players) {
-		rankHand(player);
+		player.rankHand(d);
 	}
 }
 
-void Game::rankHand(Player & p)
-{
 
-}
 
 void Game::pickDealer() //randomly assigns a dealer
 {
