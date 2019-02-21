@@ -46,39 +46,25 @@ void Game::pickDealer() //randomly assigns a dealer
 	m_players[num].setDealer(true); 
 }
 
-void Game::test() //temporary testing method
-{
-	Deck deck = *m_deck;
-	deck.createDeck();
-	pickDealer();
-
-	deck.deal(m_players); //wont work, deck isn't shuffled
-
-	deck.shuffle();
-	deck.deal(m_players); //will work
-
-	deck.getTrumpCard(); 
-	displayHands();
-}
-
 void Game::game() 
 {
 	Deck deck = *m_deck;
 
-	//while no one has won the game
+	//while no one has won the game loop
 		deck.createDeck();
 		pickDealer();
 
-	//while no one has won the round
+	//while no one has won the round loop
 		round(deck);
 } 
 
-void Game::round(Deck deck)
+void Game::round(Deck deck) //all the stuff that happens each round
 {
 	deck.shuffle();
 	deck.deal(m_players);
 
-
+	deck.getTrumpCard();
+	displayHands();
 
 }
 
