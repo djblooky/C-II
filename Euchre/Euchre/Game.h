@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Deck.h"
+#include "TurnEngine.h"
 
 class Game
 {
@@ -9,6 +10,7 @@ private:
 	Deck *m_deck;
 	std::vector<Player> m_players;
 	void pickDealer();
+	TurnEngine *turnEngine;
 public:
 	Game();
 	~Game();
@@ -16,6 +18,8 @@ public:
 	void rankHands(Deck &d);
 	void game(); 
 	void round(Deck deck);
+
+	void turns(Deck d);
 	
 };
 

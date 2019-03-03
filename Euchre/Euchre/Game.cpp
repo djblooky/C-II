@@ -97,9 +97,16 @@ void Game::round(Deck deck) //all the stuff that happens each round
 	//deck.getTrumpSuit(); 
 
 	//display the player that chose the trump card and the suit itself
-
 	std::cout << pickedTrump.getName() << " picked the trump suit. " << deck.getTrumpSuit() << "!" << std::endl;
 
+	turns(deck);
+}
+
+void Game::turns(Deck d) 
+{
+	for (auto &player : m_players) {
+		turnEngine = new TurnEngine(player, &d);
+	}
 }
 
 
