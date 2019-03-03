@@ -18,10 +18,8 @@ public:
 	void rankHands(Deck &d);
 	void game(); 
 	void round(Deck deck);
-
 	void wholeUp();
-
 	void turns();
-	
+
 };
 

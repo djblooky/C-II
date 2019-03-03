@@ -114,3 +114,8 @@ std::string Deck::getTrumpSuit()
 	return "The trump suit is: " + trumpSuit;
 }
 
+Card Deck::getTopCard() 
+{
+	return m_deck.back();
+}
+

@@ -23,5 +23,7 @@ void TurnEngine::playHand(Player p, Deck d)
 void TurnEngine::wholeUp(Player dealer, Deck d) 
 {
 	// if the turned up card from the deck has been chosen as trump, 
-	//the dealer must remove a card from their hand and replace it with the trump card from the deck
+	if (d.getTrumpCard().getName() == d.getTopCard().getName() && d.getTrumpCard().getSuit() == d.getTopCard().getSuit()) {
+		//the dealer must remove a card from their hand and replace it with the trump card from the deck
+	}	
 }

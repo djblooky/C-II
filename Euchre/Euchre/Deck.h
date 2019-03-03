@@ -23,5 +23,6 @@ public:
 	bool getTrumpPicked();
 	Card getTrumpCard();
 	std::string getTrumpSuit();
+	Card getTopCard();
 };
 
