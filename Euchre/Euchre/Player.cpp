@@ -68,7 +68,7 @@ void Player::setDealer(bool d)
 	isDealer = d;
 }
 
-bool Player::getDealer() 
+bool Player::isDealer() 
 {
 	return isDealer;
 }

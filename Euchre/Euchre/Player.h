@@ -18,7 +18,7 @@ public:
 	void rankHand(Deck &d);
 	void setName(std::string name);
 	void setDealer(bool d);
-	bool getDealer();
+	bool isDealer();
 	std::string getName();
 };
 

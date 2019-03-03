@@ -10,7 +10,7 @@ private:
 	Deck *m_deck;
 	std::vector<Player> m_players;
 	void pickDealer();
-	TurnEngine *turnEngine;
+	TurnEngine turnEngine;
 public:
 	Game();
 	~Game();
@@ -19,7 +19,9 @@ public:
 	void game(); 
 	void round(Deck deck);
 
-	void turns(Deck d);
+	void wholeUp();
+
+	void turns();
 	
 };
 

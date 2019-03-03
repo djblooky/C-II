@@ -4,12 +4,11 @@
 class TurnEngine
 {
 private:
-	Deck *m_deck;
-	Player m_currentPlayer;
+	
 public:
-	TurnEngine(Player cP, Deck *d);
+	TurnEngine();
 	~TurnEngine();
-	void turn();
-	void replaceCard();
+	void playHand(Player p, Deck d);
+	void wholeUp(Player dealer, Deck d);
 };
 
