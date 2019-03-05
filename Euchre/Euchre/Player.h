@@ -20,5 +20,5 @@ public:
 	void setDealer(bool d);
 	bool isDealer();
 	std::string getName();
-};
+	void playCard(Card card);
 

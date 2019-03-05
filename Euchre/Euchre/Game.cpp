@@ -16,6 +16,7 @@ Game::Game()
 	m_players.push_back(m_p4);
 
 	m_deck = new Deck();
+	//assign teams
 }
 
 Game::~Game()
@@ -99,8 +100,11 @@ void Game::round(Deck deck) //all the stuff that happens each round
 	//display the player that chose the trump card and the suit itself
 	std::cout << pickedTrump.getName() << " picked the trump suit. " << deck.getTrumpSuit() << "!" << std::endl;
 
-	wholeUp();
-	turns();
+	//while players still have cards
+	{
+		wholeUp();
+		turns();
+	}
 }
 
 void Game::wholeUp() 
