@@ -2,6 +2,9 @@
 #include "Deck.h"
 #include <random>
 #include <ctime>
+#include <algorithm>
+
+
 
 Deck::Deck()
 {
@@ -118,4 +121,11 @@ Card Deck::getTopCard()
 {
 	return m_deck.back();
 }
+
+void Deck::removeCard(Card card)
+{
+	m_deck.erase(std::remove(m_deck.begin(), m_deck.end(), card), m_deck.end());
+}
+
+
 

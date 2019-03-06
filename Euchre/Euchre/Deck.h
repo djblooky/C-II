@@ -24,5 +24,6 @@ public:
 	Card getTrumpCard();
 	std::string getTrumpSuit();
 	Card getTopCard();
+	void removeCard(Card card);
 };
 

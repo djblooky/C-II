@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "Player.h"
 #include "Deck.h"
-#include <switch.h>
+#include "TurnEngine.h"
+#include <vector>
 
 Player::Player()
 {
-	isDealer = false;
+	dealer = false;
 }
 
 
@@ -14,14 +15,14 @@ Player::~Player()
 	
 }
 
-void Player::addToHand(Card card)
+void Player::addToHand(Card &card)
 {
 	m_hand.push_back(card);
 }
 
 void Player::displayHand() {
 
-	if (isDealer) {
+	if (dealer) {
 		std::cout << "(Dealer) ";
 	}
 	std::cout << m_name << "'s hand: ";
@@ -115,12 +116,12 @@ void Player::setName(std::string name)
 
 void Player::setDealer(bool d)
 {
-	isDealer = d;
+	dealer = d;
 }
 
 bool Player::isDealer() 
 {
-	return isDealer;
+	return dealer;
 }
 
 std::string Player::getName()
@@ -128,8 +129,37 @@ std::string Player::getName()
 	return m_name;
 }
 
-void Player::playCard(Card card)
+void Player::playCard(Card &card)
 {
-	//removes card from hand
-	//add card to play pile
+	m_hand.erase(std::remove(m_hand.begin(), m_hand.end(), card), m_hand.end()); //removes card from hand
+	
+	
+}
+
+void Player::removeTopCard()
+{
+	m_hand.erase(m_hand.end()); //is this last index?
+}
+
+Card Player::getTrumpCard(Deck &d)
+{
+	Card trumpCard;
+	trumpCard.setRank(100);
+
+	for (auto &card : m_hand) {
+		if (card.getSuit() == d.getTrumpSuit() || (card.getColor() == d.getTrumpCard().getColor() && card.getName() == "Jack")) {
+			trumpCard = card;
+		}
+	}
+	return trumpCard;
+}
+
+bool Player::hasTrumpCard(Deck &d)
+{
+	if (getTrumpCard(d).getRank() != 100) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }

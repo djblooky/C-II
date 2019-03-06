@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "Card.h"
 
 class TurnEngine
 {
@@ -9,8 +10,9 @@ private:
 public:
 	TurnEngine();
 	~TurnEngine();
-	void playHand(Player p, Deck d);
-	void wholeUp(Player dealer, Deck d);
+	void playHand(Player &p, Deck &d);
+	void wholeUp(Player &dealer, Deck &d);
 	Card getWinningCard();
+	void addToPile(Card card);
 };
 

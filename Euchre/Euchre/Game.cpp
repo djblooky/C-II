@@ -52,7 +52,7 @@ void Game::rankHands(Deck &d)
 			break;
 		}
 		else { //no players had a strong hand
-			if (player.getDealer()) {
+			if (player.isDealer()) {
 				pickedTrump = player;
 				pickedTrump.setName("No players");
 			}

@@ -7,18 +7,21 @@ class Deck;
 class Player
 {
 private:
-	bool isDealer;
+	bool dealer;
 	std::string m_name;
 	std::vector<Card> m_hand;
 public:
 	Player();
 	~Player();
-	void addToHand(Card card);
+	void addToHand(Card &card);
 	void displayHand();
 	void rankHand(Deck &d);
 	void setName(std::string name);
 	void setDealer(bool d);
 	bool isDealer();
 	std::string getName();
-	void playCard(Card card);
-
+	void playCard(Card &card);
+	void removeTopCard();
+	Card getTrumpCard(Deck &d);
+	bool hasTrumpCard(Deck &d);
+};
