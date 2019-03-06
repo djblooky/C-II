@@ -3,6 +3,7 @@
 #include "Deck.h"
 #include "TurnEngine.h"
 #include <vector>
+#include <algorithm>
 
 Player::Player()
 {
@@ -132,8 +133,6 @@ std::string Player::getName()
 void Player::playCard(Card &card)
 {
 	m_hand.erase(std::remove(m_hand.begin(), m_hand.end(), card), m_hand.end()); //removes card from hand
-	
-	
 }
 
 void Player::removeTopCard()
