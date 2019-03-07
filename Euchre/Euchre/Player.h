@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "Card.h"
+class Card;
 class Deck;
 
 class Player

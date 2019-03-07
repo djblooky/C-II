@@ -62,7 +62,7 @@ bool Card::getColor()
 
 void Card::setWhoPlayedIt(Player p)
 {
-	setWhoPlayedIt = p;
+	whoPlayedIt = p;
 }
 
 Player Card::getWhoPlayedIt()

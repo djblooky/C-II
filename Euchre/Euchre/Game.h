@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Deck.h"
 #include "TurnEngine.h"
+#include <string>
 
 class Game
 {

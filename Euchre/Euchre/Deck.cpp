@@ -4,8 +4,6 @@
 #include <ctime>
 #include <algorithm>
 
-
-
 Deck::Deck()
 {
    isShuffled = false;
