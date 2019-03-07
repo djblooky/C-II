@@ -100,11 +100,14 @@ void Game::round(Deck deck) //all the stuff that happens each round
 	//display the player that chose the trump card and the suit itself
 	std::cout << pickedTrump.getName() << " picked the trump suit. " << deck.getTrumpSuit() << "!" << std::endl;
 
-	//while players still have cards
+	while(stillCards()) //while players still have cards
 	{
-		wholeUp();
-		turns();
+		wholeUp(); //whole up dealer
+		turns(); //play turns
+		turnEngine.checkRoundWinner(); //give point to round winner
 	}
+
+	getGameWinner();
 }
 
 void Game::wholeUp() 
@@ -122,6 +125,31 @@ void Game::turns()
 		turnEngine.playHand(player, *m_deck);
 	}
 }
+
+bool Game::stillCards() {
+	for (auto &player : m_players) {
+		if (player.getHandTotal() > 0) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+std::string Game::getGameWinner() {
+
+	Player winner;
+	winner.setPoints(0);
+
+	for (auto &player : m_players) {
+		if (player.getPoints() > winner.getPoints()) {
+			winner = player;
+		}
+	}
+
+	return winner.getName() + " has won the game!";
+}
+
 
 
 

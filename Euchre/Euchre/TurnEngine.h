@@ -15,5 +15,6 @@ public:
 	void wholeUp(Player &dealer, Deck &d);
 	Card getWinningCard();
 	void addToPile(Card card);
+	void checkRoundWinner();
 };
 

@@ -64,3 +64,8 @@ void TurnEngine::addToPile(Card card)
 {
 	pile.push_back(card);
 }
+
+void TurnEngine::checkRoundWinner() { //gives point to winner
+
+	getWinningCard().getWhoPlayedIt().addPoint();
+}

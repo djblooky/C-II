@@ -135,7 +135,7 @@ void Player::playCard(Card &card)
 	Card *a = &card;
 	Card *b;
 
-	for (int i = 0; i < m_hand.size(); i++) { //for every card in hand
+	for (unsigned int i = 0; i < m_hand.size(); i++) { //for every card in hand
 		b = &m_hand[i]; //get card at current index
 		if (b == a) { //if card matches
 			m_hand.erase(m_hand.begin() + i); //remove it by index
@@ -170,4 +170,27 @@ bool Player::hasTrumpCard(Deck &d)
 	else {
 		return false;
 	}
+}
+
+int Player::getHandTotal() {
+
+	int count = 0;
+	for (int i = 0; i < m_hand.size(); i++) {
+		count++;
+	}
+
+	return count;
+}
+
+void Player::addPoint() {
+	points++;
+}
+
+int Player::getPoints()
+{
+	return points;
+}
+
+void Player::setPoints(int p) {
+	points = p;
 }

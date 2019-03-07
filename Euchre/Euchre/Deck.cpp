@@ -127,7 +127,7 @@ void Deck::removeCard(Card card)
 	Card *a = &card;
 	Card *b;
 
-	for (int i = 0; i < m_deck.size(); i++) { //for every card in deck
+	for (unsigned int i = 0; i < m_deck.size(); i++) { //for every card in deck
 		b = &m_deck[i]; //get card at current index
 		if (b == a) { //if card matches
 			m_deck.erase(m_deck.begin() + i); //remove it by index

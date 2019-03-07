@@ -20,6 +20,9 @@ public:
 	void round(Deck deck);
 	void wholeUp();
 	void turns();
+	bool stillCards();
+	std::string getGameWinner();
+
 
 };
 
