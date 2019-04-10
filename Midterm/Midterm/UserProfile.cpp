@@ -1,11 +1,15 @@
 #include "pch.h"
 #include <iostream>
+#include <string>
+#include <vector>
 #include "UserProfile.h"
 
 
 UserProfile::UserProfile()
 {
-	name = createUserName();
+	name = getUserName();
+	//address = getUserAddress();
+	//indentifier = generateUniqueID();
 }
 
 
@@ -13,7 +17,7 @@ UserProfile::~UserProfile()
 {
 }
 
-std::string UserProfile::createUserName() 
+std::string UserProfile::getUserName() 
 {
 	std::string name;
 	std::cin >> name;

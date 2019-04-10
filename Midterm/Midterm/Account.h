@@ -4,12 +4,12 @@ class Account :
 	public UserProfile
 {
 private:
-	int balance;
+	double balance;
 
 public:
 	Account();
 	~Account();
-	void deposit(int amount);
-	void withdraw(int amount);
+	void deposit(double amount);
+	void withdraw(double amount);
 };
 
