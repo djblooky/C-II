@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Deck.h"
 #include "TurnEngine.h"
+#include <string>
 
 class Game
 {
@@ -20,6 +21,9 @@ public:
 	void round(Deck deck);
 	void wholeUp();
 	void turns();
+	bool stillCards();
+	std::string getGameWinner();
+
 
 };
 

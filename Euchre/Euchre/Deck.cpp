@@ -4,8 +4,6 @@
 #include <ctime>
 #include <algorithm>
 
-
-
 Deck::Deck()
 {
    isShuffled = false;
@@ -124,7 +122,16 @@ Card Deck::getTopCard()
 
 void Deck::removeCard(Card card)
 {
-	m_deck.erase(std::remove(m_deck.begin(), m_deck.end(), card), m_deck.end());
+	Card *a = &card;
+	Card *b;
+
+	for (int i = 0; i < m_deck.size(); i++) { //for every card in deck
+		b = &m_deck[i]; //get card at current index
+		if (b == a) { //if card matches
+			m_deck.erase(m_deck.begin() + i); //remove it by index
+			break;
+		}
+	}
 }
 
 

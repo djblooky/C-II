@@ -40,7 +40,7 @@ void TurnEngine::wholeUp(Player &dealer, Deck &d)
 	Card trump = dealer.getTrumpCard(d);
 
 	// if the turned up card from the deck has been chosen as trump, 
-	if (d.getTrumpCard().getName() == d.getTopCard().getName() && d.getTrumpCard().getSuit() == d.getTopCard().getSuit()) {
+	if (d.getTrumpPicked()) {
 		dealer.removeTopCard(); //remove card from dealer's hand
 		dealer.addToHand(trump); //add trump card to dealer's hand
 		d.removeCard(d.getTrumpCard()); //remove trump card from the deck
@@ -63,4 +63,9 @@ Card TurnEngine::getWinningCard() //returns card with winning rank
 void TurnEngine::addToPile(Card card)
 {
 	pile.push_back(card);
+}
+
+void TurnEngine::checkRoundWinner() { //gives point to winner
+
+	getWinningCard().getWhoPlayedIt().addPoint();
 }

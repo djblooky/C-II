@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Card.h"
+#include "Player.h"
 
 Card::Card(const std::string name, int rank, int s)
 {
@@ -57,4 +58,14 @@ std::string Card::getName()
 bool Card::getColor()
 {
 	return isRed;
+}
+
+void Card::setWhoPlayedIt(Player p)
+{
+	whoPlayedIt = p;
+}
+
+Player Card::getWhoPlayedIt()
+{
+	return whoPlayedIt;
 }
