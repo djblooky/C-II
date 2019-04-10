@@ -13,5 +13,7 @@ private:
 public:
 	UserProfile();
 	~UserProfile();
+	std::string createUserName();
+	void createAccount();
 };
 
