@@ -17,6 +17,8 @@ public:
 	~UserProfile();
 	std::string getUserName();
 	void createAccount();
+	bool areFundsSufficient(double amount);
+	int getNumberOfAccounts();
 	void transferAmount(Account A, Account B, double amount);
 	std::string getTransactionString(double amount, Account A);
 	std::string getTransactionString(double amount, Account A, Account B);
