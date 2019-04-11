@@ -10,6 +10,7 @@ private:
 	std::string m_address;
 	int m_uniqueID;
 	std::vector<Account> m_accounts;
+	std::vector<std::string> m_history;
 public:
 	UserProfile();
 	~UserProfile();

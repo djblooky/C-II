@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cmath>
 #include "UserProfile.h"
 
 
@@ -10,6 +11,7 @@ UserProfile::UserProfile()
 	m_name = getUserName();
 	//m_address = getUserAddress();
 	//m_uniqueID = generateUniqueID();
+	m_history = 
 }
 
 
@@ -36,12 +38,17 @@ void UserProfile::transferAmount(Account A, Account B, double amount)
 {
 	A.withdraw(amount);
 	B.deposit(amount);
-	getTransaction(amount, A, B);
+	logHistory(getTransactionString(amount, A, B));
 }
 
 std::string UserProfile::getTransactionString(double amount, Account A) //for deposit and withdraw
 {
-	return;
+	if (amount < 0) {
+		return m_name + " has withdrawn " + std::to_string(abs(amount)) + " from " + A.getAccountName();
+	}
+	else {
+		return m_name + " has deposited " + std::to_string(amount) + " into " + A.getAccountName();
+	}
 }
 
 std::string UserProfile::getTransactionString(double amount, Account A, Account B) { //for transfer
@@ -50,5 +57,6 @@ std::string UserProfile::getTransactionString(double amount, Account A, Account 
 
 void logHistory(std::string transaction)
 {
-	//add string to vector of transactions
+	m_history.push_back(transaction);//add string to vector of transactions
+	
 }
