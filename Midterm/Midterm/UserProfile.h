@@ -1,7 +1,8 @@
 #pragma once
-#include <iostream>
-#include <vector>
 #include "Account.h"
+#include <string>
+#include <vector>
+
 
 class UserProfile
 {
@@ -19,5 +20,6 @@ public:
 	void transferAmount(Account A, Account B, double amount);
 	std::string getTransactionString(double amount, Account A);
 	std::string getTransactionString(double amount, Account A, Account B);
+	void logHistory(std::string transaction);
 };
 

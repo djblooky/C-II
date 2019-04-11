@@ -3,9 +3,8 @@
 
 #include "pch.h"
 #include "UserProfile.h"
-#include <iostream>
 
 int main()
 {
-	UserProfile profile();
+	UserProfile profile;
 }

@@ -1,7 +1,9 @@
 #pragma once
-#include "UserProfile.h"
-class Account :
-	public UserProfile
+#include <iostream>
+class UserProfile;
+
+
+class Account 
 {
 private:
 	double m_balance;

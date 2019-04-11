@@ -1,9 +1,12 @@
 #include "pch.h"
-#include <iostream>
-#include <string>
-#include <vector>
-#include <cmath>
 #include "UserProfile.h"
+#include <iostream>
+#include <vector>
+
+/*
+#include <cmath>
+#include <iomanip>
+*/
 
 
 UserProfile::UserProfile()
@@ -11,7 +14,7 @@ UserProfile::UserProfile()
 	m_name = getUserName();
 	//m_address = getUserAddress();
 	//m_uniqueID = generateUniqueID();
-	m_history = 
+	
 }
 
 
@@ -29,10 +32,15 @@ std::string UserProfile::getUserName()
 void UserProfile::createAccount()
 {
 	//if all of their current accounts have a balance greater than 25 dollars
+	{
+		m_accounts.push_back(new Account());
+	}
 
 	//If a user tries to create an account when they have insufficient funds in 
 	//one or more accounts, you must display the accounts in question.
 }
+
+//checkForSufficientFunds
 
 void UserProfile::transferAmount(Account A, Account B, double amount) 
 {
@@ -55,7 +63,7 @@ std::string UserProfile::getTransactionString(double amount, Account A, Account 
 	return m_name + " has transfered $" + std::to_string(amount) + " from " + A.getAccountName() + " to " + B.getAccountName();
  }
 
-void logHistory(std::string transaction)
+void UserProfile::logHistory(std::string transaction)
 {
 	m_history.push_back(transaction);//add string to vector of transactions
 	
