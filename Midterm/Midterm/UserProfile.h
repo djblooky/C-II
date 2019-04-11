@@ -6,14 +6,17 @@
 class UserProfile
 {
 private:
-	std::string name;
-	std::string address;
-	int indentifier;
-	std::vector<Account> accounts;
+	std::string m_name;
+	std::string m_address;
+	int m_uniqueID;
+	std::vector<Account> m_accounts;
 public:
 	UserProfile();
 	~UserProfile();
 	std::string getUserName();
 	void createAccount();
+	void transferAmount(Account A, Account B, double amount);
+	std::string getTransactionString(double amount, Account A);
+	std::string getTransactionString(double amount, Account A, Account B);
 };
 
