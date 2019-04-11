@@ -26,3 +26,8 @@ void Account::withdraw(double amount)
 	}
 	
 }
+
+double Account::getBalance()
+{
+	return balance;
+}
