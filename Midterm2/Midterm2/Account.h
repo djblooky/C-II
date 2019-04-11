@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-class UserProfile;
+#include "UserProfile.h"
 
 
 class Account
@@ -8,6 +8,7 @@ class Account
 private:
 	double m_balance;
 	std::string m_name;
+	UserProfile m_profile;
 
 public:
 	Account();

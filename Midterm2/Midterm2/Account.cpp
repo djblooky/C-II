@@ -15,7 +15,7 @@ void Account::deposit(double amount)
 {
 	m_balance += amount;
 
-	logHistory(getTransactionString(amount, *this));
+	m_profile.logHistory(m_profile.getTransactionString(amount, *this));
 }
 
 void Account::withdraw(double amount)
@@ -27,7 +27,7 @@ void Account::withdraw(double amount)
 		std::cout << "Invalid amount. Please withdraw in intervals of 5, 10, or 20." << std::endl;
 	}
 
-	logHistory(getTransactionString(-amount, *this));
+	m_profile.logHistory(m_profile.getTransactionString(-amount, *this));
 }
 
 double Account::getBalance()

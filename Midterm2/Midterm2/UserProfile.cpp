@@ -33,9 +33,9 @@ void UserProfile::createAccount()
 {
 	//if all of their current accounts have a balance greater than 25 dollars
 	{
-		m_accounts.push_back(new Account());
+		Account account;
+		m_accounts.push_back(account);
 	}
-
 	//If a user tries to create an account when they have insufficient funds in 
 	//one or more accounts, you must display the accounts in question.
 }
