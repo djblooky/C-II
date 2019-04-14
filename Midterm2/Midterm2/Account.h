@@ -11,7 +11,7 @@ private:
 	UserProfile m_profile;
 
 public:
-	Account();
+	Account(std::string name, UserProfile profile);
 	~Account();
 	void deposit(double amount);
 	void withdraw(double amount);

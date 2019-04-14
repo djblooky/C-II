@@ -2,8 +2,11 @@
 #include "Account.h"
 
 
-Account::Account()
+Account::Account(std::string name, UserProfile profile)
 {
+	m_name = name;
+	m_balance = 0;
+	m_profile = profile;
 }
 
 
@@ -20,7 +23,7 @@ void Account::deposit(double amount)
 
 void Account::withdraw(double amount)
 {
-	if (amount == (5 || 10 || 20)) { //the user can only withdraw money in 5, 10 or 20 dollar increments.
+	if (amount == 5 || amount == 10 || amount == 20) { //the user can only withdraw money in 5, 10 or 20 dollar increments.
 		m_balance -= amount;
 	}
 	else {
@@ -38,9 +41,4 @@ double Account::getBalance()
 std::string Account::getAccountName()
 {
 	return m_name;
-}
-
-double Account::getBalance()
-{
-	return balance;
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "Account.h"
+class Account;
 #include <string>
 #include <vector>
 
@@ -12,6 +12,7 @@ private:
 	int m_uniqueID;
 	std::vector<Account> m_accounts;
 	std::vector<std::string> m_history;
+	std::vector<Account> m_insufficient;
 public:
 	UserProfile();
 	~UserProfile();
@@ -23,4 +24,5 @@ public:
 	std::string getTransactionString(double amount, Account A);
 	std::string getTransactionString(double amount, Account A, Account B);
 	void logHistory(std::string transaction);
+	void getTransactionHistory();
 };
