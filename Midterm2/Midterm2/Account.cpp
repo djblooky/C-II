@@ -19,6 +19,7 @@ void Account::deposit(double amount)
 	m_balance += amount;
 
 	m_profile.logHistory(m_profile.getTransactionString(amount, *this));
+	logAccountHistory(m_profile.getTransactionString(-amount, *this));
 }
 
 void Account::withdraw(double amount)
@@ -31,6 +32,7 @@ void Account::withdraw(double amount)
 	}
 
 	m_profile.logHistory(m_profile.getTransactionString(-amount, *this));
+	logAccountHistory(m_profile.getTransactionString(-amount, *this));
 }
 
 double Account::getBalance()
@@ -41,4 +43,17 @@ double Account::getBalance()
 std::string Account::getAccountName()
 {
 	return m_name;
+}
+
+void Account::logAccountHistory(std::string transaction)
+{
+	m_history.push_back(transaction);
+}
+
+void Account::getAccountHistory()
+{
+	std::cout << "History for " << m_name << ":" << std::endl;
+	for (auto &transaction : m_history) {
+		std::cout << transaction;
+	}
 }

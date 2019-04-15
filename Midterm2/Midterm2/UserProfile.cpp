@@ -75,7 +75,7 @@ bool UserProfile::areFundsSufficient(double amount) //checks if funds are greate
 
 int UserProfile::getNumberOfAccounts()
 {
-	return m_accounts.size();
+	return static_cast<int>(m_accounts.size());
 }
 
 void UserProfile::transferAmount(Account A, Account B, double amount)
@@ -83,6 +83,8 @@ void UserProfile::transferAmount(Account A, Account B, double amount)
 	A.withdraw(amount);
 	B.deposit(amount);
 	logHistory(getTransactionString(amount, A, B));
+	A.logAccountHistory(getTransactionString(amount, A, B));
+	B.logAccountHistory(getTransactionString(amount, A, B));
 }
 
 std::string UserProfile::getTransactionString(double amount, Account A) //for deposit and withdraw
