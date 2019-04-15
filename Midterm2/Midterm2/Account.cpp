@@ -19,7 +19,7 @@ void Account::deposit(double amount)
 	m_balance += amount;
 
 	m_profile.logHistory(m_profile.getTransactionString(amount, *this));
-	logAccountHistory(m_profile.getTransactionString(-amount, *this));
+	logAccountHistory((m_profile.getTransactionString(-amount, *this)));
 }
 
 void Account::withdraw(double amount)

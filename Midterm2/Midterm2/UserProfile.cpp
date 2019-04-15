@@ -10,35 +10,31 @@
 */
 
 
+UserProfile::UserProfile(std::string name, std::string address, int ID)
+{
+	*m_name = name;
+	*m_address = address;
+	m_uniqueID = ID;
+}
+
 UserProfile::UserProfile()
 {
-	m_name = getUserName();
-	//m_address = getUserAddress();
-	//m_uniqueID = generateUniqueID();
-
+	*m_name = "User";
 }
 
 
 UserProfile::~UserProfile()
 {
+	delete m_name;
+	delete m_address;
 }
 
-std::string UserProfile::getUserName()
-{
-	std::string name;
-	std::cin >> name;
-	return name;
-}
-
-void UserProfile::createAccount()
+void UserProfile::createAccount(std::string accountName)
 {
 	//if all of their current accounts have a balance greater than 25 dollars
 	if(areFundsSufficient(25))
 	{
-		std::string name;
-		std::cout << "Enter a name for the account: ";
-		std::cin >> name;
-		Account account(name, *this);
+		Account account(accountName, *this);
 		m_accounts.push_back(account);
 	}
 	else {
@@ -90,15 +86,15 @@ void UserProfile::transferAmount(Account A, Account B, double amount)
 std::string UserProfile::getTransactionString(double amount, Account A) //for deposit and withdraw
 {
 	if (amount < 0) {
-		return m_name + " has withdrawn " + std::to_string(abs(amount)) + " from " + A.getAccountName();
+		return *m_name + " has withdrawn " + std::to_string(abs(amount)) + " from " + A.getAccountName();
 	}
 	else {
-		return m_name + " has deposited " + std::to_string(amount) + " into " + A.getAccountName();
+		return *m_name + " has deposited " + std::to_string(amount) + " into " + A.getAccountName();
 	}
 }
 
 std::string UserProfile::getTransactionString(double amount, Account A, Account B) { //for transfer
-	return m_name + " has transfered $" + std::to_string(amount) + " from " + A.getAccountName() + " to " + B.getAccountName();
+	return *m_name + " has transfered $" + std::to_string(amount) + " from " + A.getAccountName() + " to " + B.getAccountName();
 }
 
 void UserProfile::logHistory(std::string transaction)
@@ -111,4 +107,9 @@ void UserProfile::getTransactionHistory()
 	for (auto &transaction : m_history) { //display each transaction in history
 		std::cout << transaction;
 	}
+}
+
+Account UserProfile::getAccount(int accountNum)
+{
+	return m_accounts[accountNum-1];
 }
