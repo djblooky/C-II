@@ -4,6 +4,7 @@
 
 CashRegister::CashRegister()
 {
+	moneyInRegister = 500;
 }
 
 
@@ -11,11 +12,13 @@ CashRegister::~CashRegister()
 {
 }
 
-double CashRegister::MakeChange(int paymentAmount, MenuItem item) //user pays in whole dollar amounts
+double CashRegister::MakeChange(int paymentAmount, double cost) //user pays in whole dollar amounts
 {
 	double change = 0;
 
-	while (paymentAmount - item.getCost() > 0) { //while enough change hasn't been made
+	moneyInRegister += paymentAmount;
+
+	while (paymentAmount - cost > 0) { //while enough change hasn't been made
 		if (paymentAmount >= 20) {
 			paymentAmount -= 20;
 			change += 20;
@@ -49,6 +52,8 @@ double CashRegister::MakeChange(int paymentAmount, MenuItem item) //user pays in
 			change += .01;
 		}	
 	}
+
+	moneyInRegister -= change;
 
 	return change;
 }

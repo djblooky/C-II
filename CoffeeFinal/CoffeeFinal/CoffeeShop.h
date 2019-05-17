@@ -14,5 +14,7 @@ public:
 	void displayMenu();
 	void createInventory();
 	void addToMenu(MenuItem item);
+	void TakeOrder(int payment, std::vector<MenuItem> items);
+	void sellItem(int payment, MenuItem item);
 };
 

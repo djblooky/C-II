@@ -8,6 +8,6 @@ private:
 public:
 	CashRegister();
 	~CashRegister();
-	double MakeChange(int paymentAmount, MenuItem item);
+	double MakeChange(int paymentAmount, double cost);
 };
 
