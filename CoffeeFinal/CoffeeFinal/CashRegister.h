@@ -1,3 +1,5 @@
+#include "MenuItem.h"
+
 #pragma once
 class CashRegister
 {
@@ -6,6 +8,6 @@ private:
 public:
 	CashRegister();
 	~CashRegister();
-	double MakeChange();
+	double MakeChange(int paymentAmount, MenuItem item);
 };
 
