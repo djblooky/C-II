@@ -2,11 +2,12 @@
 //
 
 #include "pch.h"
+#include "CoffeeShop.h"
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	CoffeeShop shop();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

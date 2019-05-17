@@ -151,10 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CashRegister.h" />
+    <ClInclude Include="CoffeeShop.h" />
+    <ClInclude Include="MenuItem.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CashRegister.cpp" />
     <ClCompile Include="CoffeeFinal.cpp" />
+    <ClCompile Include="CoffeeShop.cpp" />
+    <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
